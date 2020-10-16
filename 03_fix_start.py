@@ -15,7 +15,13 @@ onde todas as instancias de stra foram substituidas por strb.
 
 def fix_start(s):
     # +++ SUA SOLUÇÃO +++
-    return
+    '''first_char = s[0]
+    resto = s[1:]
+    if first_char in resto:
+         resto = resto.replace(first_char, '*')
+    return first_char + resto'''
+
+    return s[0] + s[1:].replace(s[0], '*') if s[0] in s[1:] else s
 
 
 # --- Daqui para baixo são apenas códigos auxiliáries de teste. ---
