@@ -14,7 +14,9 @@ Assuma que a e b tem tamanho 2 ou maior.
 
 def mix_up(a, b):
     # +++ SUA SOLUÇÃO +++
-    return
+    return b[0:2] + a[2:] + " " + a[0:2] + b[2:] \
+        if len(a) >= 2 and len(b) >= 2 \
+        else 'operation impossible to be performed'
 
 
 # --- Daqui para baixo são apenas códigos auxiliáries de teste. ---
@@ -42,3 +44,5 @@ if __name__ == '__main__':
     test(mix_up, ('dog', 'dinner'), 'dig donner')
     test(mix_up, ('gnash', 'sport'), 'spash gnort')
     test(mix_up, ('pezzy', 'firm'), 'fizzy perm')
+    test(mix_up, ('a', 'test'), 'operation impossible to be performed')
+    test(mix_up, ('test', 'b'), 'operation impossible to be performed')
