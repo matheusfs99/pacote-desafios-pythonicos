@@ -14,7 +14,7 @@ Assuma que a e b tem tamanho 2 ou maior.
 
 def mix_up(a, b):
     # +++ SUA SOLUÇÃO +++
-    return b[0:2] + a[2:] + " " + a[0:2] + b[2:] \
+    return ' '.join([(b[0:2] + a[2:]), (a[0:2] + b[2:])]) \
         if len(a) >= 2 and len(b) >= 2 \
         else 'operation impossible to be performed'
 
