@@ -19,7 +19,8 @@ def front_back(a, b):
     a_back = a[len(a_front):]
     b_front = b[:ceil(len(b) / 2)]
     b_back = b[len(b_front):]
-    return a_front + b_front + a_back + b_back
+    solution = [a_front, b_front, a_back, b_back]
+    return ''.join(solution)
 
 
 
