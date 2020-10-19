@@ -10,9 +10,17 @@ Exemplo: 'abcde', a metade da frente é 'abc' e a de trás é 'de'.
 Finalmente, dadas duas strings a e b, retorne uma string na forma:
 a-frente + b-frente + a-trás + b-trás
 """
+
+from math import ceil
+
 def front_back(a, b):
     # +++ SUA SOLUÇÃO +++
-    return
+    a_front = a[:ceil(len(a) / 2)]
+    a_back = a[len(a_front):]
+    b_front = b[:ceil(len(b) / 2)]
+    b_back = b[len(b_front):]
+    return a_front + b_front + a_back + b_back
+
 
 
 # --- Daqui para baixo são apenas códigos auxiliáries de teste. ---
