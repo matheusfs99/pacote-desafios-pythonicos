@@ -8,10 +8,23 @@ modificar as listas recebidas.
 A sua solução deve rodar em tempo linear, ou seja, deve fazer uma
 única passagem em cada uma das listas.
 """
-
+import heapq
 def linear_merge(list1, list2):
     # +++ SUA SOLUÇÃO +++
-    return sorted(list1 + list2)
+    # response = []
+    #
+    # while len(list1) + len(list2) > 0:  # while = O(n)
+    #     has_only_list1 = list1 and not list2
+    #     has_both_lists = list1 and list2
+    #     pop_from_list1 = has_only_list1 or (has_both_lists and list1[-1] > list2[-1])
+    #     response.append(list1.pop(-1) if pop_from_list1 else list2.pop(-1))  # append = O(1)
+    #
+    # response.reverse()  # reverse = O(n)
+    # return response
+
+    # Resposta com complexidade linear usando heapq
+    import heapq
+    return list(heapq.merge(list1, list2))
 
 
 # --- Daqui para baixo são apenas códigos auxiliáries de teste. ---
