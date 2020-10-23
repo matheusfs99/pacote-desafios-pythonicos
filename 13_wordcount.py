@@ -55,7 +55,26 @@ import sys
 
 
 # +++ SUA SOLUÇÃO +++
+def read_txt(filename):
+    file = open(filename, 'r')
+    list_words = file.read().lower().split()
+    file.close()
+    s = []
+    for i in list_words:
+        s.append((i, list_words.count(i)))
+    return dict(sorted(set(s)))
+
 # Defina as funções print_words(filename) e print_top(filename).
+def print_words(filename):
+    l = read_txt(filename)
+    for i in l:
+        print(i, l[i])
+
+
+def print_top(filename):
+    l = read_txt(filename)
+    for i in sorted(l, key=l.get, reverse=True):
+        print(i, l[i])
 
 
 # A função abaixo chama print_words() ou print_top() de acordo com os
